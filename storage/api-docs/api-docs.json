@@ -1,0 +1,74 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your Super Application API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/classes": {
+            "get": {
+                "summary": "Lấy tất cả các lớp học",
+                "operationId": "004b4a380090c293a79676e233dad110",
+                "responses": {
+                    "200": {
+                        "description": "Lấy danh sách lớp học thành công"
+                    }
+                }
+            }
+        },
+        "/api/my-classes": {
+            "get": {
+                "summary": "Lấy danh sách lớp học của người dùng đã xác thực",
+                "operationId": "c837a90fac2946ece9796c3241f69199",
+                "responses": {
+                    "200": {
+                        "description": "Lấy danh sách lớp học thành công"
+                    }
+                }
+            }
+        },
+        "/api/courses/register": {
+            "post": {
+                "summary": "Register a course for an authenticated user",
+                "description": "Register a course for an authenticated user.",
+                "operationId": "89d19ca935e2acd33e1032e6bd294503",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "course_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Course registration successful"
+                    },
+                    "404": {
+                        "description": "Course not found"
+                    }
+                }
+            }
+        },
+        "/api/my-courses": {
+            "get": {
+                "summary": "Get the list of courses registered by the user",
+                "description": "Display the list of courses registered by the user.",
+                "operationId": "8af161ad50c115aa067edb2e960b01a2",
+                "responses": {
+                    "200": {
+                        "description": "List of registered courses retrieved successfully"
+                    }
+                }
+            }
+        }
+    }
+}
